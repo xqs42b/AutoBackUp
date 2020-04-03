@@ -73,9 +73,7 @@ def write_content(wheader, wconn):
             dir_data = wconn.recv(1024)
             dir_file_str += dir_data.decode("utf-8")
             init_dir_size += len(dir_data)
-        print("--------", dir_file_str)
         dir_file_list = json.loads(dir_file_str)
-        print("dir_file_list:", dir_file_list)
         if save_path == "./":
             new_dir = setting.save_path + dir_name
         else:
